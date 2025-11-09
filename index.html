@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>An Apology for Mira</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'apology-pink': '#fef3f7',
+                        'heart-red': '#ff6b81',
+                        'text-dark': '#3a3a5a',
+                    },
+                    keyframes: {
+                        bounceHeart: {
+                            '0%, 100%': { transform: 'scale(1)' },
+                            '50%': { transform: 'scale(1.15)' },
+                        }
+                    },
+                    animation: {
+                        'bounce-heart': 'bounceHeart 1.5s infinite ease-in-out',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@400;600&display=swap');
+        .handwritten {
+            font-family: 'Pacifico', cursive;
+        }
+    </style>
+</head>
+<body class="bg-apology-pink min-h-screen flex items-center justify-center p-4 selection:bg-heart-red selection:text-white">
+
+    <div class="max-w-4xl w-full bg-white p-6 md:p-12 rounded-3xl shadow-2xl border-4 border-heart-red/50 text-center space-y-8 transform transition duration-500 hover:scale-[1.01] hover:shadow-3xl">
+
+        
+        <header class="space-y-4">
+            <div class="text-6xl md:text-8xl text-heart-red mx-auto w-fit animation-bounce-heart">
+                ❤️
+            </div>
+
+            <h1 class="handwritten text-5xl md:text-7xl font-bold text-text-dark leading-tight">
+                I'm so sorry, Mira.
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-600 font-inter max-w-2xl mx-auto">
+                Please give me a chance to make it up to you. Let's talk na po.
+            </p>
+        </header>
+
+        <section class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6">
+
+            <div class="flex flex-col items-center space-y-3">
+                <img
+                    src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExbDh4dXc5aDlnMDVveDQ1cWhzaWM3M2R4ZGU0cTV6amJwc2xic2djNSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/TZBED1pP5m8N2/giphy.gif"
+                    onerror="this.onerror=null; this.src='https://placehold.co/400x250/ffc0cb/3a3a5a?text=GIF+Placeholder+1';"
+                    alt="A cute apologetic animated GIF"
+                    class="w-full h-auto max-h-80 object-cover rounded-xl shadow-lg border-2 border-heart-red/30"
+                >
+                <p class="text-sm text-gray-500 font-inter">
+                    Me rn
+                </p>
+            </div>
+
+            <div class="flex flex-col items-center space-y-3">
+                <img
+                    src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExeDdqcG1vMGtsbGp4MnhoaHZ1aHF3bzI0aWhzcml1ZnZsczV4Z3Y5NSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fV8iuSEwLQ6005diSh/giphy.gif"
+                    onerror="this.onerror=null; this.src='https://placehold.co/400x250/e0b0ff/3a3a5a?text=GIF+Placeholder+2';"
+                    alt="Another cute apologetic animated GIF"
+                    class="w-full h-auto max-h-80 object-cover rounded-xl shadow-lg border-2 border-heart-red/30"
+                >
+                <p class="text-sm text-gray-500 font-inter">
+                    huhuhuhuhu
+                </p>
+            </div>
+
+        </section>
+
+        <footer class="pt-8">
+            <button id="revealBtn"
+                    class="bg-heart-red text-white handwritten text-2xl px-8 py-3 rounded-full shadow-lg hover:shadow-xl transform hover:scale-[1.05] transition duration-200 focus:outline-none focus:ring-4 focus:ring-heart-red/50"
+            >
+                Pls click me
+            </button>
+
+            <p id="hiddenMessage" class="mt-4 text-lg text-text-dark font-inter italic hidden transition duration-300">
+                P.S. I know how stupid I am for what I did. I promise it will never happen again. I don't want to lose my Mira. Bati na tayo pls:((
+            </p>
+        </footer>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('revealBtn');
+            const message = document.getElementById('hiddenMessage');
+
+            btn.addEventListener('click', () => {
+                if (message.classList.contains('hidden')) {
+                    message.classList.remove('hidden');
+                    btn.textContent = "Thank you for reading po ❤️";
+                } else {
+                    message.classList.add('hidden');
+                    btn.textContent = "Click me pls";
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
